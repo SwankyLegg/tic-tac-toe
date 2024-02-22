@@ -1,0 +1,21 @@
+#page {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+#content {
+  background: #14BDAC;
+  height: 224px;
+  position: relative;
+  width: 344px;
+}
+
+#ttt {
+  height: 204px;
+  margin: 10px auto;
+  position: relative;
+  width: 204px;
+}

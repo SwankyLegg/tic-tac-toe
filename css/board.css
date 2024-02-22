@@ -1,0 +1,106 @@
+#board {
+  height: 100%;
+  position: absolute;
+    top: 0;
+    left: 0;
+  width: 100%;
+}
+
+#board-button {
+  color: #fff;
+  font-size: 36px;
+  position: absolute;
+}
+
+#board-button > .mi {
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  padding: 8px;
+  transform: scale3d(0,0,1) rotate3d(0,0,1,0deg);
+  transition-duration: .24s;
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+}
+
+#board-button > .mi.enabled {
+  opacity: 1;
+  transform: scale3d(1,1,1) rotate3d(0,0,0,0deg);
+  /*transition-delay: .36s;*/
+  /*transition-delay: .48s;*/
+  transition-delay: .64s;
+  transition-duration: .24s;
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+}
+
+#board-button > .mi.rotate {
+/*  transform: scale3d(1,1,1) rotate3d(0,0,0,360deg);
+  transition-property: transform;
+  transition-duration: .2s;
+  transition-delay: .12s;*/
+}
+
+
+.line {
+  animation-duration: .4s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(.4,0,.2,1);
+  background: #14a192;
+  opacity: .4;
+  position: absolute;
+}
+
+.line-x {
+  animation-name: animXLines;
+  height: 6px;
+  left: 0;
+  transform: scale3d(.37,1,1);
+  width: 100%;
+}
+
+.line-y {
+  animation-name: animYLines;
+  height: 100%;
+  top: 0;
+  transform: scale3d(1,.37,1);
+  width: 6px;
+}
+
+.line:nth-of-type(1) {
+  top: 64px;
+}
+
+.line:nth-of-type(2) {
+  top: 134px;
+}
+
+.line:nth-of-type(3) {
+  left: 64px;
+}
+
+.line:nth-of-type(4) {
+  left: 134px;
+}
+
+@keyframes animXLines {
+  0% {
+    opacity: .4;
+    transform: scale3d(.37,1,1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale3d(1,1,1);
+  }
+}
+
+@keyframes animYLines {
+  0% {
+    opacity: .4;
+    transform: scale3d(1,.37,1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale3d(1,1,1);
+  }
+}
